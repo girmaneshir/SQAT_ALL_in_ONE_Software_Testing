@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.9.20 on win32)" generated="2024-12-08T15:52:41.447338" rpa="false" schemaversion="5">
+<suite id="s1" name="Lab05 test robot web operations" source="C:\Users\user\Desktop\SQAT2024_CEP_2024\Lab_SQAT\Lab_ALL_in_ONE\Lab05_test_robot_web_operations.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2024-12-08T15:52:41.827544" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:5000'.</msg>
+<arg>http://127.0.0.1:5000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-08T15:52:41.827544" elapsed="2.113176"/>
+</kw>
+<test id="s1-t1" name="Test Addition" line="7">
+<kw name="Input Number">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-08T15:52:43.951691" level="INFO">Typing text '5' into text field 'id=num1'.</msg>
+<arg>id=num1</arg>
+<arg>${num1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T15:52:43.950694" elapsed="0.184505"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-08T15:52:44.136197" level="INFO">Typing text '3' into text field 'id=num2'.</msg>
+<arg>id=num2</arg>
+<arg>${num2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T15:52:44.136197" elapsed="0.119679"/>
+</kw>
+<arg>5</arg>
+<arg>3</arg>
+<status status="PASS" start="2024-12-08T15:52:43.949696" elapsed="0.306180"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-08T15:52:44.258868" level="INFO">Clicking element '//button[text()='Add']'.</msg>
+<arg>//button[text()='Add']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T15:52:44.258868" elapsed="0.126665"/>
+</kw>
+<kw name="Verify Result">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-08T15:52:44.430409" level="INFO">${result} = Result: 8</msg>
+<var>${result}</var>
+<arg>id=result</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T15:52:44.387526" elapsed="0.043881"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${expected_result}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-12-08T15:52:44.431407" elapsed="0.000997"/>
+</kw>
+<arg>Result: 8</arg>
+<status status="PASS" start="2024-12-08T15:52:44.386527" elapsed="0.045877"/>
+</kw>
+<doc>Test the addition operation through the web interface</doc>
+<status status="PASS" start="2024-12-08T15:52:43.941717" elapsed="0.491684"/>
+</test>
+<test id="s1-t2" name="Test Subtraction" line="13">
+<kw name="Input Number">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-08T15:52:44.438388" level="INFO">Typing text '10' into text field 'id=num1'.</msg>
+<arg>id=num1</arg>
+<arg>${num1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T15:52:44.437391" elapsed="0.118683"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-08T15:52:44.557071" level="INFO">Typing text '4' into text field 'id=num2'.</msg>
+<arg>id=num2</arg>
+<arg>${num2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T15:52:44.557071" elapsed="0.093750"/>
+</kw>
+<arg>10</arg>
+<arg>4</arg>
+<status status="PASS" start="2024-12-08T15:52:44.437391" elapsed="0.214426"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-08T15:52:44.652815" level="INFO">Clicking element '//button[text()='Subtract']'.</msg>
+<arg>//button[text()='Subtract']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T15:52:44.652815" elapsed="0.095744"/>
+</kw>
+<kw name="Verify Result">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-08T15:52:44.773491" level="INFO">${result} = Result: 6</msg>
+<var>${result}</var>
+<arg>id=result</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T15:52:44.749556" elapsed="0.024935"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${expected_result}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-12-08T15:52:44.774491" elapsed="0.000997"/>
+</kw>
+<arg>Result: 6</arg>
+<status status="PASS" start="2024-12-08T15:52:44.748559" elapsed="0.026929"/>
+</kw>
+<doc>Test the subtraction operation through the web interface</doc>
+<status status="PASS" start="2024-12-08T15:52:44.434399" elapsed="0.342086"/>
+</test>
+<test id="s1-t3" name="Test Multiplication" line="19">
+<kw name="Input Number">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-08T15:52:44.781470" level="INFO">Typing text '4' into text field 'id=num1'.</msg>
+<arg>id=num1</arg>
+<arg>${num1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T15:52:44.780472" elapsed="0.100734"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-08T15:52:44.882202" level="INFO">Typing text '5' into text field 'id=num2'.</msg>
+<arg>id=num2</arg>
+<arg>${num2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T15:52:44.881206" elapsed="0.088760"/>
+</kw>
+<arg>4</arg>
+<arg>5</arg>
+<status status="PASS" start="2024-12-08T15:52:44.780472" elapsed="0.189494"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-08T15:52:44.971961" level="INFO">Clicking element '//button[text()='Multiply']'.</msg>
+<arg>//button[text()='Multiply']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T15:52:44.970965" elapsed="0.109709"/>
+</kw>
+<kw name="Verify Result">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-08T15:52:45.114581" level="INFO">${result} = Result: 20</msg>
+<var>${result}</var>
+<arg>id=result</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T15:52:45.082665" elapsed="0.031916"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${expected_result}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-12-08T15:52:45.115577" elapsed="0.000000"/>
+</kw>
+<arg>Result: 20</arg>
+<status status="PASS" start="2024-12-08T15:52:45.081668" elapsed="0.033909"/>
+</kw>
+<doc>Test the multiplication operation through the web interface</doc>
+<status status="PASS" start="2024-12-08T15:52:44.779477" elapsed="0.338094"/>
+</test>
+<test id="s1-t4" name="Test Division" line="25">
+<kw name="Input Number">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-08T15:52:45.124553" level="INFO">Typing text '12' into text field 'id=num1'.</msg>
+<arg>id=num1</arg>
+<arg>${num1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T15:52:45.123556" elapsed="0.119679"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-08T15:52:45.245233" level="INFO">Typing text '4' into text field 'id=num2'.</msg>
+<arg>id=num2</arg>
+<arg>${num2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T15:52:45.244232" elapsed="0.182513"/>
+</kw>
+<arg>12</arg>
+<arg>4</arg>
+<status status="PASS" start="2024-12-08T15:52:45.121560" elapsed="0.305185"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-08T15:52:45.427741" level="INFO">Clicking element '//button[text()='Divide']'.</msg>
+<arg>//button[text()='Divide']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T15:52:45.426745" elapsed="0.078788"/>
+</kw>
+<kw name="Verify Result">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-08T15:52:45.531463" level="INFO">${result} = Result: 3</msg>
+<var>${result}</var>
+<arg>id=result</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T15:52:45.507529" elapsed="0.023934"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${expected_result}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-12-08T15:52:45.531463" elapsed="0.000998"/>
+</kw>
+<arg>Result: 3</arg>
+<status status="PASS" start="2024-12-08T15:52:45.506530" elapsed="0.025931"/>
+</kw>
+<doc>Test the division operation through the web interface</doc>
+<status status="PASS" start="2024-12-08T15:52:45.120567" elapsed="0.412890"/>
+</test>
+<test id="s1-t5" name="Test Division By Zero" line="31">
+<kw name="Input Number">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-08T15:52:45.557393" level="INFO">Typing text '5' into text field 'id=num1'.</msg>
+<arg>id=num1</arg>
+<arg>${num1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T15:52:45.538986" elapsed="0.123129"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-08T15:52:45.663113" level="INFO">Typing text '0' into text field 'id=num2'.</msg>
+<arg>id=num2</arg>
+<arg>${num2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T15:52:45.663113" elapsed="0.087764"/>
+</kw>
+<arg>5</arg>
+<arg>0</arg>
+<status status="PASS" start="2024-12-08T15:52:45.537448" elapsed="0.213429"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-08T15:52:45.751875" level="INFO">Clicking element '//button[text()='Divide']'.</msg>
+<arg>//button[text()='Divide']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T15:52:45.751875" elapsed="0.070811"/>
+</kw>
+<kw name="Verify Result">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-08T15:52:45.847619" level="INFO">${result} = Error: Division by zero is undefined.</msg>
+<var>${result}</var>
+<arg>id=result</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T15:52:45.824680" elapsed="0.022939"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${expected_result}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-12-08T15:52:45.847619" elapsed="0.000000"/>
+</kw>
+<arg>Error: Division by zero is undefined.</arg>
+<status status="PASS" start="2024-12-08T15:52:45.822686" elapsed="0.024933"/>
+</kw>
+<doc>Test division by zero handling through the web interface</doc>
+<status status="PASS" start="2024-12-08T15:52:45.535454" elapsed="0.313161"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-12-08T15:52:45.849614" elapsed="2.332268"/>
+</kw>
+<status status="PASS" start="2024-12-08T15:52:41.451362" elapsed="6.731464"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="Lab05 test robot web operations">Lab05 test robot web operations</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

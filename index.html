@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Operations</title>
+    <script>
+        async function performOperation(operation) {
+            const x = parseFloat(document.getElementById('num1').value);
+            const y = parseFloat(document.getElementById('num2').value);
+            let url = `/${operation}`;
+            let response;
+
+            try {
+                response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ x, y })
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    document.getElementById('result').innerText = `Result: ${result.result}`;
+                } else {
+                    document.getElementById('result').innerText = `Error: ${result.error}`;
+                }
+            } catch (error) {
+                document.getElementById('result').innerText = `Error: ${error.message}`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Math Operations</h1>
+    <div>
+        <input type="number" id="num1" placeholder="Enter first number" required>
+        <input type="number" id="num2" placeholder="Enter second number" required>
+    </div>
+    <div>
+        <button onclick="performOperation('add')">Add</button>
+        <button onclick="performOperation('subtract')">Subtract</button>
+        <button onclick="performOperation('multiply')">Multiply</button>
+        <button onclick="performOperation('divide')">Divide</button>
+    </div>
+    <h2 id="result"></h2>
+</body>
+</html>
